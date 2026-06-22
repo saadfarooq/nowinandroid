@@ -16,7 +16,7 @@
 plugins {
     alias(libs.plugins.nowinandroid.android.library)
     alias(libs.plugins.nowinandroid.android.library.jacoco)
-    alias(libs.plugins.nowinandroid.hilt)
+    // Hilt KSP removed — generated code checked in
     id("kotlinx-serialization")
 }
 
@@ -26,6 +26,8 @@ android {
 }
 
 dependencies {
+    implementation(libs.hilt.android)
+    compileOnly(libs.hilt.compiler)
     api(projects.core.common)
     api(projects.core.database)
     api(projects.core.datastore)

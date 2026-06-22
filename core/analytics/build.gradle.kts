@@ -16,7 +16,7 @@
 plugins {
     alias(libs.plugins.nowinandroid.android.library)
     alias(libs.plugins.nowinandroid.android.library.compose)
-    alias(libs.plugins.nowinandroid.hilt)
+    // Hilt KSP removed — generated code checked in
 }
 
 android {
@@ -24,6 +24,8 @@ android {
 }
 
 dependencies {
+    implementation(libs.hilt.android)
+    compileOnly(libs.hilt.compiler)
     implementation(libs.androidx.compose.runtime)
 
     prodImplementation(platform(libs.firebase.bom))

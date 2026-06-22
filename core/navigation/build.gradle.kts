@@ -16,8 +16,7 @@
 
 plugins {
     alias(libs.plugins.nowinandroid.android.library)
-    alias(libs.plugins.nowinandroid.hilt)
-    alias(libs.plugins.hilt)
+    // Hilt KSP + plugin removed — no @Inject/@Module annotations in this module
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.compose)
 }
@@ -27,6 +26,8 @@ android {
 }
 
 dependencies {
+    implementation(libs.hilt.android)
+    compileOnly(libs.hilt.compiler)
     api(libs.androidx.navigation3.runtime)
     implementation(libs.androidx.savedstate.compose)
     implementation(libs.androidx.lifecycle.viewModel.navigation3)

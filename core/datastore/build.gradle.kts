@@ -17,7 +17,7 @@
 plugins {
     alias(libs.plugins.nowinandroid.android.library)
     alias(libs.plugins.nowinandroid.android.library.jacoco)
-    alias(libs.plugins.nowinandroid.hilt)
+    // Hilt KSP removed — generated code checked in
 }
 
 android {
@@ -28,6 +28,8 @@ android {
 }
 
 dependencies {
+    implementation(libs.hilt.android)
+    compileOnly(libs.hilt.compiler)
     api(libs.androidx.dataStore)
     api(projects.core.datastoreProto)
     api(projects.core.model)

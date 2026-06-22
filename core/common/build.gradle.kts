@@ -15,10 +15,12 @@
  */
 plugins {
     alias(libs.plugins.nowinandroid.jvm.library)
-    alias(libs.plugins.nowinandroid.hilt)
+    // Hilt KSP removed — generated code checked in
 }
 
 dependencies {
+    implementation(libs.hilt.core)
+    compileOnly(libs.hilt.compiler)
     implementation(libs.kotlinx.coroutines.core)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.turbine)
