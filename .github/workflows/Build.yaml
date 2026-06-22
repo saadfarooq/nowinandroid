@@ -3,8 +3,9 @@ name: Build
 on:
   workflow_dispatch:
   push:
-    branches: [main, saadfarooq/*]
+    branches:
       - main
+      - 'saadfarooq/*'
   pull_request:
 
 concurrency:
