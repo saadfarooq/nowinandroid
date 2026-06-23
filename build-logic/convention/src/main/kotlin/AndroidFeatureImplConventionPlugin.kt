@@ -27,7 +27,7 @@ class AndroidFeatureImplConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             apply(plugin = "nowinandroid.android.library")
-            apply(plugin = "nowinandroid.hilt")
+            // ponytail: Hilt KSP removed — generated code checked in
 
             extensions.configure<LibraryExtension> {
                 testOptions.animationsDisabled = true
@@ -37,6 +37,8 @@ class AndroidFeatureImplConventionPlugin : Plugin<Project> {
             dependencies {
                 "implementation"(project(":core:ui"))
                 "implementation"(project(":core:designsystem"))
+                "implementation"(libs.findLibrary("hilt.android").get())
+                "compileOnly"(libs.findLibrary("hilt.compiler").get())
 
                 "implementation"(libs.findLibrary("androidx.lifecycle.runtimeCompose").get())
                 "implementation"(libs.findLibrary("androidx.lifecycle.viewModelCompose").get())
