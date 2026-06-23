@@ -30,7 +30,7 @@ import kotlinx.coroutines.Dispatchers
 @InstallIn(SingletonComponent::class)
 object DispatchersModule {
     // CI benchmark change
-    val benchmarkField = 42
+    val benchmarkField = 43
     @Provides
     @Dispatcher(IO)
     fun providesIODispatcher(): CoroutineDispatcher = Dispatchers.IO
